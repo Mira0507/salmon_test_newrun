@@ -6,9 +6,11 @@
 
 **Method**
 
-1. Salmon Indexing (with Decoys): reused my [previous indexing decoys and indexing files](https://github.com/Mira0507/seqc_comparison)
+0. Conda environment: mapping (for salmon) and r (for tximport and DESeq2) envs same as my [previous conda envs](https://github.com/Mira0507/seqc_comparison/blob/master/README.md) 
 
-2. Salmon Mapping: salmon_remap.sh
+1. Salmon Indexing (with Decoys): reused my [previous indexing decoys and indexing files](https://github.com/Mira0507/seqc_comparison/blob/master/README.md)
+
+2. Salmon Mapping: salmon_remap.sh (below)
 
 ```bash
 #!/bin/bash
@@ -32,4 +34,4 @@ done
 cd ..
 ```
 
-3. DE analysis: 
+3. DE analysis: [DE I](https://github.com/Mira0507/salmon_test_newrun/blob/master/singlequant_txi.Rmd), [DE II (ranking and shrinkage focus)](https://github.com/Mira0507/salmon_test_newrun/blob/master/DEGranking_shrinkage.Rmd) 
