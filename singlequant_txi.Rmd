@@ -5,13 +5,9 @@ output: html_document
 
 ## Raw data 
 
-#### - **Link**: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE157852
+#### - Same raw data from my [previous project](https://github.com/Mira0507/salmon_test/blob/master/singlequant_txi.Rmd) 
 
-#### - **Study aim**: Reveal neurological complications in patients with COVID-19
-
-#### - **Study summary**: Human Pluripotent Stem Cell-Derived Neural Cells and Brain Organoids were infected with SARS-CoV-2 for 72hrs and analyzed with bulk RNA-seq.
-
-#### - Samples: Mock- or SARS-CoV-2-infected neuronal cells 
+#### - Salmon re-mapping with [newly built decoys and indexing files](https://github.com/Mira0507/seqc_comparison/blob/master/README.md) 
 
 ```{r global_options, include=FALSE}
 knitr::opts_chunk$set(
@@ -330,9 +326,6 @@ normFactors_plot +
     ylim(0.5, 1.5)
 ```
 
-### Results & Discussion 1: 
-
-#### - Patterns of the size factors (from TPM) and the normalization factors per gene (from Counts) by sample were similar in terms of magnitude   
 
 
 ## Setting functions for QC plots
@@ -400,10 +393,6 @@ QCcorrHeatmap_fn(TPM, "TPM")
 QCcorrHeatmap_fn(Counts, "Counts") 
 ```
 
-### Results & Discussion 2: 
-
-#### - Unsupervised learning-mediated sample QC resulted in highly similar patterns between TPM and Counts 
-
 
 ## Running DE analysis
 
@@ -436,12 +425,6 @@ for (x in TvC) {
                  main=paste("Dispersion of", x, "Input"))
 }
 ```
-
-### Results & Discussion 3:
-
-#### - Both inputs gave a goot fit
-
-#### - No major difference was seen in the dispersion plots between two conditions 
 
 
 ## Shrinking effect size 
@@ -606,11 +589,6 @@ geom_vline(xintercept=alpha,
 scale_x_continuous(breaks=seq(0, 1, by=0.1)) 
 ```
 
-### Results & Discussion 5:
-
-#### - Both inputs showed highly similar FDR distribution patterns across the FDR range.  
-#### - When the FDR > 0.7, more genes were counted in the TPM input than in the Counts. 
-
 ## Volcano plots
 
 #### - Black dashed lines: log2FoldChange = -1 and 1 
@@ -692,10 +670,6 @@ ggtitle("Distribution of Log2 Folds by Input Type") +
 xlim(xlim[1], xlim[2])
 ```
 
-### Results & Discussion 7: 
-
-#### - Both inputs showed nearly identical fold change distribution
-
 
 ## Exploring expression profiling with normalized count data
 
@@ -762,11 +736,6 @@ for (x in TvC) {
 }
 ```
 
-### Results & Discussion 8: 
-
-#### - No major difference is seen bewteen the TPM and Counts 
-
-
 
 ## NA statistics: zero count genes & outlier genes  
 
@@ -802,12 +771,6 @@ ggplot(NAstat, aes(x=Type, y=Number, group=Input, fill=Input, label=Number)) +
     ggtitle("Number of NA Genes") + 
     ylab("Number of Genes")
 ```
-
-### Results & Discussion 9: 
-
-#### - Both inputs produced no major difference in the number of NA genes
-
-
 
 
 ## Ranking DEGs with the TPM and original count inputs
@@ -931,14 +894,6 @@ compareRanks_fn(combineTable_fn(DOWNlfcList),
                 "Log2FoldChange (Decreased)")
 ```
 
-### Results & Discussion 10: 
-
-#### - FDR ranking (top): Genes with high expression levels (red dots) were ranked similarly between two input types which is close to the black diagonal line. Ranking dissimilarity increased in lower ranking ranges (250-500).
-
-#### - Absolute fold ranking (2nd top): Genes were ranked higher as their expression levels were lower (blue to purple dots). Genes with high expression levels (red dots) showed less difference in the rankings which is close to the black diagonal line. 
-
-#### - Decrease/increase fold ranking (bottom/2nd botton): Highly expressed genes (red dots) showed middle-rankings (150-350). Low-ranking genes tended to be ranked higher with TPM than with Counts as the slope was higher than 1 which is indicated by the black diagonal line.   
-
 
 ## Visualizing DEG ranks II: Relationship between gene expression level and rank difference 
 
@@ -968,14 +923,6 @@ RankdiffOverMean_fn(combineTable_fn(DOWNlfcList),
 ```
 
 
-### Results & Discussion 11: 
-
-#### - Difference in FDR ranking (top): High-ranking genes (blue dots) showed less difference. Genes with high expression levels (higher x-values) showed less difference. 
-
-#### - Difference in absolute/increase fold ranking (2nd top/2nd bottom): Low mean ranks (red dots) seemed to be coupled with higher ranking with TPM (negative y-values) than that with Counts while high mean ranks (purple to blue dots) seemed vice versa or random. 
-
-#### - Difference in decrease fold ranking (bottom): Low-to-middle ranking genes (red-purple dots) tended to have higher ranking with TPM (negative y-values) whereas high ranking genes (blue dots) showed higher ranking with Counts (positive y-values)
-
 
 ## Summarizing up/down DEGs with an upset plot 
 
@@ -1004,11 +951,6 @@ upset(fromList(upsetInput),
       sets.x.label="Number of Genes per Group", 
       order.by="freq") 
 ```
-
-### Results & Discussion 12: 
-
-#### - No unique genes were detected by count input
-
 
 
 ## Session Info 
