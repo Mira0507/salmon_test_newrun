@@ -555,10 +555,6 @@ grid.arrange(MA[[1]], shr_MA[[1]], nrow=1)
 grid.arrange(MA[[2]], shr_MA[[2]], nrow=1)
 ```
 
-### Results & Discussion 4: 
-
-#### - Both inputs gave fairly identical MA plots
-
 
 ## Exploring distribution of false discovery rate (FDR)
 
@@ -643,9 +639,6 @@ Volcano_fn(res, Label=res$Label) + geom_text_repel(color="black")
 ```
 
 
-### Results & Discussion 6: 
-
-#### - Both inputs gave nearly identical volcano plots 
 
 
 ## Exploring distribution of log2FoldChange by input type
