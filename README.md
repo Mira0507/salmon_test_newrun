@@ -34,4 +34,4 @@ done
 cd ..
 ```
 
-3. DE analysis: [DE I](https://github.com/Mira0507/salmon_test_newrun/blob/master/singlequant_txi.Rmd), [DE II (ranking and shrinkage focus)](https://github.com/Mira0507/salmon_test_newrun/blob/master/DEGranking_shrinkage.Rmd) 
+3. DE analysis: [DE I](https://github.com/Mira0507/salmon_test_newrun/blob/master/singlequant_txi.Rmd), [DE II (ranking and shrinkage focus)](https://github.com/Mira0507/salmon_test_newrun/blob/master/DEGranking_shrinkage.Rmd), [DE III (rankdiff genes focus)](https://github.com/Mira0507/salmon_test_newrun/blob/master/DEGranking_genes.Rmd)
