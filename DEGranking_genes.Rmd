@@ -694,7 +694,7 @@ rank.ntrans.plot.fn(rankList[[rankdiff.levels[4]]], "log2FoldChange (Decrease)")
 # Initialize a list storing rankdiff genes 
 large.rankdiff <- rankList
 
-# Assigne a vector storing minimum (thresholds) rankdiff for filtering large rankdiff genes
+# Assign a vector storing minimum (thresholds) rankdiff for filtering large rankdiff genes
 rankdiff.thr <- c(25, 10, 10, 10)
 
 names(rankdiff.thr) <- rankdiff.levels
