@@ -379,9 +379,6 @@ head(all.resList[[2]][['Counts']])
 
 #### - **Red dashed lines**: log2FoldChange = -1 and 1
 
-#### - **Upper**: **TPM** with (right) or without (left) shrinkage
-
-#### - **Lower**: **Counts** with (right) or without (left) shrinkage
 
 #### - Reference: [**DESeq2 doc "MA-plot"**](https://www.bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.html#ma-plot)
 
@@ -459,22 +456,6 @@ for (i in shrinkage) {
 lfcplotList
 
 ```
-
-
-
-## Exploring expression profiling with normalized count data
-
-#### - Normalized count matrices are extracted from dds objects and filtered by thresholds set at FDR and log2FoldChange
-
-#### - The heatmaps display **z-scores** of the normalized counts
-
-#### - **lowfdrList**: a list of matrices filtered by **FDR < alpha**
-
-#### - **highfoldList**: a list of matrices filtered by **FDR < alpha** AND **absolute log2FoldChange > user's minimum threshold (mLog)**
-
-#### - In this analysis, **mLog = 1**
-
-#### - References: [**Harvard Chan Bioinformatics Core workshop**](https://github.com/hbctraining/DGE_workshop_salmon_online/blob/master/lessons/06_DGE_visualizing_results.md), [**DESeq2 doc "Heatmap of the count matrix"**](https://www.bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.html#heatmap-of-the-count-matrix)
 
 
 
